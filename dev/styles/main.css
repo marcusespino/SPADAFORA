@@ -1,0 +1,146 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+#cabecalho {
+  position: fixed;
+  background-color: transparent;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  backdrop-filter: blur(20px);
+  font-family: "Outfit", sans-serif;
+}
+#cabecalho.scrolled {
+  background-color: #ec2b35;
+  transition: background-color 0.3s ease-in-out;
+}
+#cabecalho.scrolled .navbar-brand img {
+  filter: brightness(0) invert(1);
+}
+#cabecalho.scrolled .nav-link {
+  color: white !important;
+}
+#cabecalho.scrolled .nav-link img {
+  filter: brightness(0) invert(1);
+}
+#cabecalho.scrolled .navbar-toggler {
+  background-color: white;
+  color: #ec2b35;
+}
+@media (max-width: 767px) {
+  #cabecalho.scrolled {
+    background-color: transparent;
+  }
+  #cabecalho.scrolled .navbar-brand img {
+    filter: none;
+  }
+  #cabecalho.scrolled .nav-link {
+    color: #000 !important;
+  }
+  #cabecalho.scrolled .nav-link img {
+    filter: none;
+  }
+  #cabecalho.scrolled .navbar-toggler {
+    background-color: #000;
+    color: #ec2b35;
+  }
+}
+#cabecalho .navbar-brand img {
+  height: 85px;
+}
+#cabecalho .navbar-toggler {
+  background-color: #f6f7f2;
+  border-radius: 1px solid #f6f7f2;
+}
+#cabecalho .navbar-brand {
+  padding: 0;
+  color: #f6f7f2;
+}
+#cabecalho .navbar-brand a {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+#cabecalho .nav-link {
+  color: #000;
+}
+.spadafora-banner {
+  position: relative;
+  z-index: 1;
+}
+.spadafora-banner.img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 767px) {
+  .spadafora-banner.img {
+    width: 80%;
+  }
+}
+.imagem-principal-container {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+}
+@media (max-width: 767px) {
+  .imagem-principal-container {
+    width: 60%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .imagem-principal-container {
+    width: 50%;
+  }
+}
+.imagem-principal {
+  width: 100%;
+  display: block;
+}
+.imagem-menor {
+  position: absolute;
+  width: 100px;
+}
+.pos2 {
+  width: 70%;
+  top: 60%;
+  right: 5%;
+  left: 35%;
+}
+.pos3 {
+  width: 40%;
+  bottom: 15%;
+  left: 0;
+}
+.section-title {
+  font-family: "Corinthia", cursive;
+  font-size: 4em;
+}
+#quem-sou-eu {
+  background-color: #f6f7f2;
+}
+#experiencia {
+  background-color: #ec2b35;
+}
+body {
+  background-color: #f6f7f2;
+}
+@media (max-width: 767px) {
+  body {
+    padding-top: 90px;
+    background-color: #ec2b35;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    padding-top: 90px;
+    background-color: #ec2b35;
+  }
+}

@@ -1,0 +1,174 @@
+@import "mapeamento.less";
+@breakpointTablet: ~"(min-width: 768px) and (max-width: 1023px)";
+@breakpointMobile: ~"(max-width: 767px)";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+li {
+    list-style: none;
+}
+
+#cabecalho {
+    position: fixed;
+    background-color: transparent;
+    width: 100%;
+    top: 0;
+    left: 0; 
+    z-index: 10;
+    backdrop-filter: blur(20px);
+    font-family: @fontePrincipal;
+
+    &.scrolled {
+        background-color: @corPrincipal;
+        transition: background-color 0.3s ease-in-out;
+
+        .navbar-brand img {
+            filter: brightness(0) invert(1); 
+        }
+
+        .nav-link {
+            color: white !important;
+        }
+
+        .nav-link img {
+            filter: brightness(0) invert(1); 
+        }
+
+        .navbar-toggler {
+            background-color: white;
+            color: @corPrincipal;
+        }
+
+        @media @breakpointMobile {
+            background-color: transparent;
+
+            .navbar-brand img {
+                filter: none; 
+            }
+
+            .nav-link {
+                color: #000 !important;
+            }
+
+            .nav-link img {
+                filter: none;
+            }
+
+            .navbar-toggler {
+                background-color: #000;
+                color: @corPrincipal;
+            }
+        }
+    }
+
+    .navbar-brand img {
+        height: 85px;
+    }
+
+
+    .navbar-toggler {
+        background-color: @cordeFundo;
+        border-radius: 1px solid @cordeFundo;
+    }
+
+    .navbar-brand {
+        padding: 0;
+        color: @cordeFundo;
+
+        a {
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+    }
+
+    .nav-link {
+        color: #000
+    }
+}
+
+.spadafora-banner {
+    position: relative;
+    z-index: 1;
+
+
+    &.img {
+        display: block;
+        width: 100%;
+        height: auto;
+
+        @media @breakpointMobile {
+            width: 80%;
+        }
+    }
+}
+
+.imagem-principal-container {
+        position: relative;
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto; 
+
+        @media @breakpointMobile {
+            width: 60%;
+        }
+
+        @media @breakpointTablet {
+            width: 50%;
+        }
+    }
+
+    .imagem-principal {
+        width: 100%;
+        display: block;
+    }
+
+    .imagem-menor {
+        position: absolute;
+        width: 100px;
+    }
+
+
+    .pos2 {
+        width: 70%;
+        top: 60%;
+        right: 5%;
+        left: 35%;
+    }
+
+    .pos3 {
+        width: 40%;
+        bottom: 15%;
+        left: 0;
+    }
+
+.section-title {
+    font-family: "Corinthia", cursive;
+    font-size: 4em;
+}
+
+#quem-sou-eu {
+    background-color: @cordeFundo;
+}
+#experiencia {
+    background-color: @corPrincipal;
+}
+
+body {
+    background-color: @cordeFundo;
+
+    @media @breakpointMobile {
+            padding-top: 90px;
+            background-color: @corPrincipal;
+        }
+
+    @media @breakpointTablet {
+            padding-top: 90px;
+            background-color: @corPrincipal;
+        }
+}
