@@ -1,0 +1,59 @@
+#social-medias {
+    background-color: @cordeFundo;
+
+    .section-title {
+        margin-bottom: 2rem;
+    }
+
+    /* Container do embed */
+    .ig-video {
+        margin: 0 auto !important;
+        max-width: 400px;
+        width: 100%;
+    }
+
+    /* Esconde legenda */
+    .instagram-media p {
+        display: none !important;
+    }
+
+    /* Estilo do iframe */
+    iframe {
+        min-height: 520px;
+        width: 100% !important;
+        border-radius: 16px;
+    }
+}
+
+/* 📲 TABLET */
+@media @breakpointTablet {
+    #social-medias {
+
+        .terceiro_video {
+            display: none;
+        }
+
+        .ig-video {
+            max-width: 360px;
+        }
+
+        iframe {
+            min-height: 480px;
+        }
+    }
+}
+
+/* 📱 MOBILE */
+@media @breakpointMobile {
+    #social-medias {
+
+        .ig-video {
+            max-width: 100%;
+        }
+
+        iframe {
+            min-height: 460px;
+        }
+    }
+}
+

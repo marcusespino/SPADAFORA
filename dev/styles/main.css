@@ -350,6 +350,300 @@ body {
     text-align: center;
   }
 }
+#social-medias {
+  background-color: #f6f7f2;
+  /* Container do embed */
+  /* Esconde legenda */
+  /* Estilo do iframe */
+}
+#social-medias .section-title {
+  margin-bottom: 2rem;
+}
+#social-medias .ig-video {
+  margin: 0 auto !important;
+  max-width: 400px;
+  width: 100%;
+}
+#social-medias .instagram-media p {
+  display: none !important;
+}
+#social-medias iframe {
+  min-height: 520px;
+  width: 100% !important;
+  border-radius: 16px;
+}
+/* 📲 TABLET */
+@media (min-width: 768px) and (max-width: 1023px) {
+  #social-medias .terceiro_video {
+    display: none;
+  }
+  #social-medias .ig-video {
+    max-width: 360px;
+  }
+  #social-medias iframe {
+    min-height: 480px;
+  }
+}
+/* 📱 MOBILE */
+@media (max-width: 1000px) {
+  #social-medias .ig-video {
+    max-width: 100%;
+  }
+  #social-medias iframe {
+    min-height: 460px;
+  }
+}
+#videos {
+  background-color: black;
+}
+.caro {
+  width: min(var(--w), 100%);
+  max-width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 10px;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  z-index: 0;
+}
+.caro__viewport {
+  width: 100%;
+  height: var(--h);
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+}
+.caro__track {
+  display: flex;
+  height: 100%;
+  transition: transform 2000ms cubic-bezier(0.22, 0.9, 0.28, 1);
+  will-change: transform;
+}
+.caro__slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  pointer-events: auto;
+}
+.caro__slide video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  pointer-events: auto;
+}
+.caro__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.45);
+  border: none;
+  color: var(--primary);
+  padding: 6px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 0.18s;
+  z-index: 4;
+}
+.caro__btn:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+.caro__btn:active {
+  transform: translateY(-50%) scale(0.96);
+}
+.caro__btn--prev {
+  left: 10px;
+}
+.caro__btn--next {
+  right: 10px;
+}
+.caro__btn svg {
+  width: 18px;
+  height: 18px;
+}
+.caro__dots {
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 12px;
+  z-index: 5;
+}
+.caro__dot {
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+  background: var(--muted);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.18s, background 0.18s;
+}
+.caro__dot[aria-pressed='true'] {
+  background: var(--primary);
+  transform: scale(1.12);
+}
+@media (max-width: 1000px) {
+  .caro {
+    padding: 8px;
+  }
+  .caro__viewport {
+    height: 200px;
+  }
+  .caro__btn {
+    width: 30px;
+    height: 30px;
+  }
+  .caro__btn svg {
+    width: 14px;
+    height: 14px;
+  }
+  .caro__dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .caro {
+    padding: 16px;
+  }
+  .caro__viewport {
+    height: 900px;
+  }
+  .caro__btn {
+    width: 60px;
+    height: 60px;
+  }
+  .caro__btn svg {
+    width: 28px;
+    height: 28px;
+  }
+  .caro__dot {
+    width: 16px;
+    height: 16px;
+  }
+}
+.caro__btn:focus,
+.caro__dot:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.15);
+  outline-offset: 4px;
+}
+#fale-conosco {
+  background-color: #ec2b35;
+}
+#fale-conosco .fale-conosco__form {
+  margin-left: 40px;
+  align-items: center;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background-color: #fff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+#fale-conosco .fale-conosco__form h3 {
+  text-align: center;
+  font-weight: 500;
+}
+#fale-conosco .fale-conosco__form input,
+#fale-conosco .fale-conosco__form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+#fale-conosco .fale-conosco__form input:focus,
+#fale-conosco .fale-conosco__form textarea:focus {
+  border-color: #000;
+}
+#fale-conosco .fale-conosco__form textarea {
+  min-height: 120px;
+  resize: none;
+}
+#fale-conosco .fale-conosco__form button {
+  margin-top: 8px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+#fale-conosco .fale-conosco__form button:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+@media (max-width: 1000px) {
+  #fale-conosco .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  #fale-conosco .row {
+    justify-content: flex-start !important;
+  }
+  #fale-conosco .fale-conosco__form {
+    margin-left: 0.5rem;
+    margin-right: auto;
+  }
+  #fale-conosco .fale-conosco__form h3 {
+    font-size: 1.4rem;
+  }
+  #fale-conosco .fale-conosco__form input,
+  #fale-conosco .fale-conosco__form textarea {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+  #fale-conosco .fale-conosco__form textarea {
+    min-height: 100px;
+  }
+  #fale-conosco .fale-conosco__form button {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  #fale-conosco .row {
+    justify-content: center !important;
+  }
+  #fale-conosco .fale-conosco__form {
+    margin: 0 auto;
+    max-width: 380px;
+  }
+  #fale-conosco .fale-conosco__form h3 {
+    font-size: 1.6rem;
+  }
+  #fale-conosco .fale-conosco__form input,
+  #fale-conosco .fale-conosco__form textarea {
+    font-size: 14px;
+  }
+  #fale-conosco .fale-conosco__form textarea {
+    min-height: 120px;
+  }
+  #fale-conosco .fale-conosco__form button {
+    font-size: 14px;
+  }
+}
 * {
   padding: 0;
   margin: 0;

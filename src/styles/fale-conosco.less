@@ -1,0 +1,132 @@
+#fale-conosco {
+    background-color: @corPrincipal;
+
+    .fale-conosco__form {
+        margin-left: 40px;
+        align-items: center;
+        width: 100%;
+        max-width: 420px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+
+        background-color: #fff;
+        padding: 32px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+        h3 {
+            text-align: center;
+            font-weight: 500;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px 14px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            font-family: inherit;
+            transition: border-color 0.2s ease;
+
+            &:focus {
+                border-color: #000;
+            }
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: none;
+        }
+
+        button {
+            margin-top: 8px;
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #000;
+            color: #fff;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+
+            &:hover {
+                opacity: 0.85;
+                transform: translateY(-1px);
+            }
+        }
+    }
+}
+
+@media @breakpointMobile {
+    #fale-conosco {
+
+        .container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .row {
+            justify-content: flex-start !important;
+        }
+
+
+        .fale-conosco__form {
+            margin-left: .5rem;
+            margin-right: auto;
+
+            h3 {
+                font-size: 1.4rem;
+            }
+
+            input,
+            textarea {
+                font-size: 13px;
+                padding: 10px 12px;
+            }
+
+            textarea {
+                min-height: 100px;
+            }
+
+            button {
+                font-size: 13px;
+                padding: 10px;
+            }
+        }
+    }
+}
+
+@media @breakpointTablet {
+    #fale-conosco {
+
+        .row {
+            justify-content: center !important;
+        }
+
+        .fale-conosco__form {
+            margin: 0 auto;
+            max-width: 380px;
+
+            h3 {
+                font-size: 1.6rem;
+            }
+
+            input,
+            textarea {
+                font-size: 14px;
+            }
+
+            textarea {
+                min-height: 120px;
+            }
+
+            button {
+                font-size: 14px;
+            }
+        }
+    }
+}
