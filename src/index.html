@@ -244,11 +244,15 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-8 col-lg-5 d-flex justify-content-center">
-                    <form class="fale-conosco__form" id="form-contato">
+                    <form class="fale-conosco__form" id="form-contato" action="https://formspree.io/f/xregwzdr"method="POST">
                         <h3>Fale Comigo</h3>
+                        <label for="nome" class="form-label fw-bold text-colored">Seu nome</label>
                         <input type="text" placeholder="Seu nome" id="nome" name="nome" required />
+                        <label for="email" class="form-label fw-bold text-colored">Seu email</label>
                         <input type="email" placeholder="Seu email" id="email" name="email" required />
+                        <label for="telefone" class="form-label fw-bold text-colored">Seu telefone  (opcional)</label>
                         <input type="tel" placeholder="Seu telefone (opcional)" id="telefone" name="telefone"/>
+                        <label for="mensagem" class="form-label fw-bold text-colored">Mensagem:</label>
                         <textarea placeholder="Sua mensagem" required id="mensagem" name="mensagem"></textarea>
                         <button type="submit">Enviar</button>
                     </form>
