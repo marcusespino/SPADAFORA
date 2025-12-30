@@ -31,12 +31,12 @@ module.exports = function(grunt) {
                 options: {
                     patterns: [
                         {
-                            match:'ENDERECO_DO_CSS',
-                            replacement: './styles/main.css'
+                            match: 'ENDERECO_DO_CSS',
+                            replacement: './src/styles/main.css'
                         },
                         {
-                            match:'ENDERECO_DO_JS',
-                            replacement: '../src/script/main.js'
+                            match: 'ENDERECO_DO_JS',
+                            replacement: './src/scripts/main.js'
                         }
                     ]
                 },
@@ -54,11 +54,11 @@ module.exports = function(grunt) {
                     patterns: [
                         {
                             match:'ENDERECO_DO_CSS',
-                            replacement: './styles/main.min.css'
+                            replacement: './src/styles/main.min.css'
                         },
                         {
                             match:'ENDERECO_DO_JS',
-                            replacement: './script/main.min.js'
+                            replacement: './src/script/main.min.js'
                         }
                     ]
                 },

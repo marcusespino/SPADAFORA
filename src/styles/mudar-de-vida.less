@@ -1,0 +1,52 @@
+#mudar-de-vida {
+    background-color: @cordeFundo;
+    padding: 3rem 0;
+
+    @media @breakpointMobile {
+        padding: 2rem 0;
+    }
+
+    .image-principal-container {
+        position: relative;
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+
+        @media @breakpointMobile {
+            max-width: 260px;
+            margin-bottom: 1.5rem;
+        }
+
+        @media @breakpointTablet {
+            max-width: 300px;
+        }
+    }
+
+    .image-principal {
+        width: 100%;
+        display: block;
+    }
+
+    h2 {
+        margin-bottom: 1rem;
+
+        @media @breakpointMobile {
+            line-height: 0.6;
+            text-align: center;
+        }
+    }
+
+    p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+
+        @media @breakpointMobile {
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        @media @breakpointTablet {
+            font-size: 1rem;
+        }
+    }
+}
