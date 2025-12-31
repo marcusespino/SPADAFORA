@@ -22,7 +22,6 @@
         position: relative;
         z-index: 1;
         overflow: hidden;
-        margin-top: -1rem;
         display: flex;
         justify-content: center;
         align-items: flex-start;
@@ -32,20 +31,19 @@
         width: 100%;
         display: flex;
         justify-content: center;
-        transform-origin: center center;
         will-change: transform;
     }
 
     .imagem-principal {
         width: 100%;
-        max-width: 100%;
         max-height: 760px;
         object-fit: contain;
         filter: drop-shadow(0 20px 40px rgba(0,0,0,.25));
         pointer-events: none;
+        display: block;
     }
 
-    /* ================= TEXTO + IFRAME ================= */
+    /* ================= TEXTO / IFRAME ================= */
     &__texto {
         position: relative;
         z-index: 10;
@@ -56,6 +54,7 @@
             width: 100%;
             border-radius: 12px;
             margin-bottom: 1rem;
+            display: block;
         }
 
         p {
@@ -72,48 +71,59 @@
         }
 
         &__imagem {
-            margin-top: 0;
-            max-height: 420px;
-            overflow: hidden;
-            perspective: 800px; // 🔥 profundidade
+            overflow: visible;
+            margin-bottom: -1.25rem; // 🔥 remove o “vácuo”
         }
 
-        .imagem-wrapper {
-            transform: perspective(800px) translateZ(-120px);
-            transition: transform 0.15s linear;
+        .imagem-wrapper,
+        .imagem-principal {
+            transform: none !important;
         }
 
         .imagem-principal {
-            max-height: 380px;
+            max-height: 360px;
         }
 
         &__texto {
-            margin-top: 1.5rem;
+            margin-top: 0;
             padding-left: 0;
             text-align: center;
+
+            iframe {
+                margin-top: 0;
+                margin-bottom: .75rem;
+            }
+
+            p {
+                padding-top: .5rem;
+            }
         }
     }
 
     /* ================= TABLET ================= */
     @media @breakpointTablet {
         &__content {
-            display: block;
+            flex-direction: row;
+            align-items: center;
         }
 
         &__imagem {
-            margin-bottom: 2rem;
+            justify-content: flex-start;
+            margin-bottom: 0;
+        }
+
+        .imagem-wrapper,
+        .imagem-principal {
+            transform: none !important;
         }
 
         .imagem-principal {
-            max-width: 420px;
-            max-height: 420px;
+            max-height: 520px;
         }
 
         &__texto {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 0 1.25rem;
-            text-align: center;
+            padding-left: 1.5rem;
+            text-align: left;
         }
     }
 }

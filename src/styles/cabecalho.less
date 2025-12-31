@@ -1,53 +1,35 @@
 #cabecalho {
     position: fixed;
-    background-color: transparent;
-    width: 100%;
     top: 0;
-    left: 0; 
+    left: 0;
+    width: 100%;
     z-index: 10;
+
+    background-color: transparent;
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
     font-family: @fontePrincipal;
+    transition: background-color 0.3s ease-in-out;
 
     &.scrolled {
         background-color: @corPrincipal;
-        transition: background-color 0.3s ease-in-out;
 
         .navbar-brand img {
-            filter: brightness(0) invert(1); 
+            filter: brightness(0) invert(1);
         }
 
         .nav-link {
-            color: white !important;
+            color: #fff !important;
         }
 
         .nav-link img {
-            filter: brightness(0) invert(1); 
+            filter: brightness(0) invert(1);
         }
 
         .navbar-toggler {
-            background-color: white;
+            background-color: #fff;
             color: @corPrincipal;
-        }
-
-        @media @breakpointMobile {
-            background-color: @corPrincipal;
-
-            .navbar-brand img {
-                filter: none; 
-            }
-
-            .nav-link {
-                color: #000 !important;
-            }
-
-            .nav-link img {
-                filter: none;
-            }
-
-            .navbar-toggler {
-                background-color: #000;
-                color: @corPrincipal;
-            }
         }
     }
 
@@ -55,10 +37,10 @@
         height: 85px;
     }
 
-
     .navbar-toggler {
         background-color: @cordeFundo;
-        border-radius: 1px solid @cordeFundo;
+        border-radius: 2px;
+        border: none;
     }
 
     .navbar-brand {
@@ -73,7 +55,32 @@
     }
 
     .nav-link {
-        color: #000
+        color: #000;
     }
 }
 
+/* ================= MOBILE FIX DEFINITIVO ================= */
+@media @breakpointMobile {
+    #cabecalho {
+        background-color: @corPrincipal;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+
+        .navbar-brand img {
+            filter: brightness(0) invert(1);
+        }
+
+        .nav-link {
+            color: #fff !important;
+        }
+
+        .nav-link img {
+            filter: brightness(0) invert(1);
+        }
+
+        .navbar-toggler {
+            background-color: #fff;
+            color: @corPrincipal;
+        }
+    }
+}

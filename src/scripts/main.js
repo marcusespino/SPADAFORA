@@ -1,6 +1,7 @@
 /* ================= DEPENDÊNCIAS ================= */
 import '../styles/main.less';
 import 'bootstrap';
+
 import $ from 'jquery';
 window.$ = window.jQuery = $;
 
@@ -60,12 +61,27 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         window.instgrm.Embeds.process();
     }
+
+    /* ===== MENU MOBILE (FECHA AO CLICAR NO LINK) ===== */
+    const menu = document.getElementById('menu-navegacao');
+    const navLinks = document.querySelectorAll('#menu-navegacao .nav-link');
+
+    if (menu) {
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                const instance = bootstrap.Collapse.getInstance(menu);
+                if (instance) {
+                    instance.hide();
+                }
+            });
+        });
+    }
 });
 
 /* ================= WINDOW LOAD ================= */
 window.addEventListener('load', () => {
 
-    /* ===== SCROLL REVEAL ===== */
+    /* ===== SCROLL REVEAL ================= */
     ScrollReveal().reveal('.imagem-menor', {
         origin: 'bottom',
         distance: '50px',
@@ -75,30 +91,23 @@ window.addEventListener('load', () => {
         interval: 300,
         reset: true
     });
-
-    /* ===== SCALE ON SCROLL ===== */
-    const scaleImage = document.querySelector('.js-scale-on-scroll');
-
-    if (scaleImage) {
-        window.addEventListener('scroll', () => {
-            const rect = scaleImage.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
-
-            if (rect.top < windowHeight && rect.bottom > 0) {
-                const progress = 1 - rect.top / windowHeight;
-                const scale = Math.min(1.15, 1 + progress * 0.15);
-                scaleImage.style.transform = `scale(${scale})`;
-            }
-        });
-    }
 });
 
+/* ================= HEADER SCROLL (DESKTOP ONLY) ================= */
 document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('cabecalho');
-
     if (!header) return;
 
+    function isMobile() {
+        return window.innerWidth <= 768;
+    }
+
     function handleScroll() {
+        if (isMobile()) {
+            header.classList.remove('scrolled');
+            return;
+        }
+
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
         } else {
@@ -107,7 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.addEventListener('scroll', handleScroll);
-
-    // garante o estado correto ao recarregar a página
+    window.addEventListener('resize', handleScroll);
     handleScroll();
 });
